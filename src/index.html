@@ -24,10 +24,12 @@
                 const response = await axios.post('http://localhost:8000/api/login', {
                 email,
                 password
+            },{
+                withCredentials: true
             })
-            localStorage.setItem('token', response.data.token)
-
-            console.log(response.data.token)
+            console.log('response', response.data)
+            // localStorage.setItem('token', response.data.token)
+           //console.log(response.data.token)
             } catch (error) {
                 console.log(error);
             }
@@ -35,11 +37,12 @@
 
         const getUsers = async () => {
             try{
-                const authToken =localStorage.getItem('token');
+                // const authToken =localStorage.getItem('token');
                 const response = await axios.get('http://localhost:8000/api/users', {
-                    headers: {
-                        'authorization': `Bearer ${authToken}`
-                    }
+                    withCredentials: true,
+                    // headers: {
+                    //     'authorization': `Bearer ${authToken}`
+                    // }
                 })
                 console.log('users data' ,response.data)
             } catch(error) {

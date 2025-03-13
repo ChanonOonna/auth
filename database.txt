@@ -1,0 +1,4 @@
+table users
+id int auto
+email varchar255 unice
+password varchar255
