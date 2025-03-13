@@ -1,0 +1,11 @@
+run
+1docker-compose up -d
+2python -v
+3npm start
+4npx nodemon index.js
+5url localhost:8888
+down 
+1 docker-compose down 
+2 exit() "python -v"
+3 ctl + c "npm start"
+4 ctl + c "npx nodemon index.js"
